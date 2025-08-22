@@ -29,7 +29,7 @@ Recommended: use vcpkg (see `vcpkg.json`). Typical packages include: glfw3, glad
 
 Set `-DUSE_SYSTEM_DEPS=ON` if you prefer system-provided libraries instead of the vcpkg manifest.
 
-## Build (Windows / PowerShell example)
+## Build demo(Windows / PowerShell example)
 
 1. Configure (example)
 

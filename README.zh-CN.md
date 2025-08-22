@@ -30,7 +30,7 @@
 
 注：`CMakeLists.txt` 支持使用 vcpkg（默认）或通过 `-DUSE_SYSTEM_DEPS=ON` 使用系统已安装的库。
 
-## 构建（Windows / PowerShell 示例）
+## 构建示例（Windows / PowerShell 示例）
 
 1. 生成构建文件（示例）
 
@@ -42,13 +42,13 @@ cmake -S . -B build \
   -DCMAKE_BUILD_TYPE=Release
 ```
 
-1. 编译
+2. 编译
 
 ```powershell
 cmake --build build --config Release
 ```
 
-1. 运行（示例）
+3. 运行（示例）
 
 ```powershell
 & .\build\bin\Release\make_open_gl_great_again.exe

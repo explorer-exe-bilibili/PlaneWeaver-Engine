@@ -7,6 +7,7 @@
 #include <tinyfiledialogs.h>
 #include "core/render/OpenGLFontRenderer.h"
 #include "core/baseItem/Font.h"
+#include "custom.h"
 
 #ifdef _WIN32
 #undef APIENTRY
@@ -161,17 +162,7 @@ int init(){
         glfwTerminate();
         return -1;
     }
-
-    try {
-        core::Explorer::getInstance()->playAudio(AudioID::bgm);
-    } catch (const std::exception& e) {
-        Log << Level::Warn << "背景音乐播放失败: " << e.what() << op::endl;
-        // 音频播放失败不会导致程序退出
-    } catch (...) {
-        Log << Level::Warn << "背景音乐播放失败: 未知异常" << op::endl;
-    }
-    screen::Screen::RegisterScreen(screen::ScreenID::Main, std::make_shared<screen::MainScreen>());
-    screen::Screen::SwitchToScreen(screen::ScreenID::Main);
+    RegisterScreens();
     SyncConfig();
     Log<<Level::Info<<"starting render loop"<<op::endl<<op::flush;
     return 0;
