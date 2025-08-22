@@ -1,0 +1,75 @@
+{
+  "name": "random-name",
+  "version": "1.0.0",
+  "description": "Random Name Project",
+  "dependencies": [
+    {
+      "name": "yasm-tool",
+      "host": true,
+      "platform": "x86"
+    },
+    "freetype",
+    "glad",
+    "glfw3",
+    "glm",
+    "libwebp",
+    "nlohmann-json",
+    "sdl2",
+    "stb",
+    "utfcpp",
+    {
+      "name": "ffmpeg",
+      "features": [
+        "vpx",
+        "zlib",
+        "opus",
+        "avcodec",
+        "avformat",
+        "swscale",
+        "swresample",
+        "opengl",
+        "dav1d",
+        "fdk-aac",
+        "sdl2",
+        "soxr"
+      ]
+    },
+    "tinyfiledialogs"
+  ],
+  "features": {
+    "full-audio": {
+      "description": "Full audio support (excludes ARM64 Windows)",
+      "dependencies": [
+        {
+          "name": "sdl2-mixer",
+          "features": [
+            "libflac",
+            "libmodplug",
+            "mpg123",
+            "wavpack",
+            "opusfile"
+          ],
+          "platform": "!(windows & arm64)"
+        }
+      ]
+    },
+    "basic-audio": {
+      "description": "Basic audio support (ARM64 Windows compatible)",
+      "dependencies": [
+        {
+          "name": "sdl2-mixer",
+          "features": [
+            "libflac",
+            "libmodplug",
+            "mpg123",
+            "opusfile"
+          ]
+        }
+      ]
+    }
+  },
+  "default-features": [
+    "full-audio"
+  ],
+  "builtin-baseline": "f26ec398c25c4980f33a50391f00a75f7ad62ef7"
+}
